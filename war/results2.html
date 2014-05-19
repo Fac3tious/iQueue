@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="html">
+<head>
+
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<meta name="generator" content="7.3.5.244" />
+<title>Results</title>
+<meta name="viewport" content="width=380" />
+<!-- CSS -->
+<link rel="stylesheet" type="text/css"
+	href="css/site_global.css?3983832653" />
+<link rel="stylesheet" type="text/css" href="css/results.css?421637430"
+	id="pagesheet" />
+<!-- Other scripts -->
+<script type="text/javascript">
+	document.documentElement.className += ' js';
+</script>
+
+<script src="scripts/listResults.js" type="text/javascript"></script>
+</head>
+<body>
+
+	<div class="clearfix" id="page">
+		<!-- column -->
+		<div class="clip_frame colelem" id="u237">
+			<!-- image -->
+			<img class="block" id="u237_img" src="images/iqueue-logov3.png"
+				alt="" width="220" height="75" />
+		</div>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				//Get submit button
+				var submitbutton = document.getElementById("tfq");
+				//Add listener to submit button
+				if (submitbutton.addEventListener) {
+					submitbutton.addEventListener("click", function() {
+						if (submitbutton.value == 'Search iQueue') {//Customize this text string to whatever you want
+							submitbutton.value = '';
+						}
+					});
+				}
+			}
+		</script>
+		<!-- CSS styles for standard search box with placeholder text-->
+		<style type="text/css">
+#tfheader {
+	
+}
+
+#tfnewsearch {
+	float: right;
+	padding: 20px;
+}
+
+.tftextinput2 {
+	margin: 0;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #666;
+	border: 1px solid #0076a3;
+	border-right: 0px;
+	border-top-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+}
+
+.tfbutton2 {
+	margin: 0;
+	padding: 5px 7px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: solid 1px #0076a3;
+	border-right: 0px;
+	background: #0095cd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee),
+		to(#0078a5));
+	background: -moz-linear-gradient(top, #00adee, #0078a5);
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+}
+
+.tfbutton2:hover {
+	text-decoration: none;
+	background: #007ead;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc),
+		to(#00678e));
+	background: -moz-linear-gradient(top, #0095cc, #00678e);
+}
+/* Fixes submit button height problem in Firefox */
+.tfbutton2::-moz-focus-inner {
+	border: 0;
+}
+
+.tfclear {
+	clear: both;
+}
+
+.tabs {
+	position: relative;
+	min-height: 600px; /* This part sucks */
+	clear: both;
+	margin: 25px 0;
+}
+
+.tab {
+	float: left;
+}
+
+.tab label {
+	background: #eee;
+	padding: 10px;
+	border: 1px solid #ccc;
+	margin-left: -1px;
+	position: relative;
+	left: 1px;
+}
+
+.tab [type=radio] {
+	display: none;
+}
+
+.content {
+	position: absolute;
+	top: 28px;
+	left: 0;
+	background: white;
+	right: 0;
+	bottom: 0;
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+
+[type=radio]:checked ~ label {
+	background: white;
+	border-bottom: 1px solid white;
+	z-index: 2;
+}
+
+[type=radio]:checked ~ label ~ .content {
+	z-index: 1;
+}
+</style>
+
+		<body>
+			<!-- HTML for SEARCH BAR -->
+			<div id="tfheader" align="left">
+
+				<input type="text" id="searchField" class="tftextinput2" name="q" size="20"
+					maxlength="120" placeholder="Search iQueue"><input type="submit"
+					value=">" class="tfbutton2" onclick="showResultsList()">
+
+				<div class="tfclear"></div>
+			</div>
+
+
+
+
+			<div class="tabs">
+
+				<div class="tab">
+					<input type="radio" id="tab-1" name="tab-group-1" checked>
+					<label for="tab-1">All Results</label>
+
+					<div id="resultsPanel" class="content"></div>
+
+				</div>
+
+				<div class="tab">
+					<input type="radio" id="tab-2" name="tab-group-1"> <label
+						for="tab-2">Articles</label>
+
+					<div class="content">
+						<table>
+							<tr>
+								<th colspan="4">Title</th>
+							<tr>
+								<th rowspan="3">Thumbnail Image</th>
+								<th colspan="2">Description</th>
+							</tr>
+							</tr>
+							<tr>
+
+								<td>Time</td>
+								<td>Date</td>
+							</tr>
+							<tr>
+								<th colspan="2">Url</th>
+							</tr>
+						</table>
+
+						<br />
+
+						<table>
+							<tr>
+								<th colspan="4">Title</th>
+							<tr>
+								<th rowspan="3">Thumbnail Image</th>
+								<th colspan="2">Description</th>
+							</tr>
+							</tr>
+							<tr>
+
+								<td>Time</td>
+								<td>Date</td>
+							</tr>
+							<tr>
+								<th colspan="2">Url</th>
+							</tr>
+						</table>
+
+						<br />
+
+						<table>
+							<tr>
+								<th colspan="4">Title</th>
+							<tr>
+								<th rowspan="3">Thumbnail Image</th>
+								<th colspan="2">Description</th>
+							</tr>
+							</tr>
+							<tr>
+
+								<td>Time</td>
+								<td>Date</td>
+							</tr>
+							<tr>
+								<th colspan="2">Url</th>
+							</tr>
+						</table>
+
+						<br />
+
+						<table>
+							<tr>
+								<th colspan="4">Title</th>
+							<tr>
+								<th rowspan="3">Thumbnail Image</th>
+								<th colspan="2">Description</th>
+							</tr>
+							</tr>
+							<tr>
+
+								<td>Time</td>
+								<td>Date</td>
+							</tr>
+							<tr>
+								<th colspan="2">Url</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+
+
+			</div>
+
+
+			<style type="text/css">
+table,th,td {
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+th,td {
+	padding: 5px;
+}
+
+table.tableizer-table {
+	border: 1px solid #CCC;
+	font-family: Arial, Helvetica, sans-serif font-size : 12px;
+}
+
+.tableizer-table td {
+	padding: 4px;
+	margin: 3px;
+	border: 1px solid #ccc;
+}
+
+.tableizer-table th {
+	background-color: #FFFFFF;
+	color: #FFF;
+	font-weight: bold;
+}
+</style>
+			<table class="tableizer-table">
+
+
+
+
+
+				</div>
+				<!-- JS includes -->
+				<script type="text/javascript">
+					if (document.location.protocol != 'https:')
+						document
+								.write('\x3Cscript src="http://musecdn.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+				</script>
+				<script type="text/javascript">
+					window.jQuery
+							|| document
+									.write('\x3Cscript src="scripts/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+				</script>
+				<script src="scripts/museutils.js?3880880085" type="text/javascript"></script>
+				<script src="scripts/jquery.watch.js?4199601726"
+					type="text/javascript"></script>
+				<!-- Other scripts -->
+				<script type="text/javascript">
+					$(document)
+							.ready(
+									function() {
+										try {
+											Muse.Utils
+													.transformMarkupToFixBrowserProblemsPreInit();/* body */
+											Muse.Utils.prepHyperlinks(true);/* body */
+											Muse.Utils.fullPage('#page');/* 100% height page */
+											Muse.Utils.showWidgetsWhenReady();/* body */
+											Muse.Utils
+													.transformMarkupToFixBrowserProblems();/* body */
+										} catch (e) {
+											Muse.Assert
+													.fail('Error calling selector function:'
+															+ e);
+										}
+									});
+				</script>
+		</body>
+</html>

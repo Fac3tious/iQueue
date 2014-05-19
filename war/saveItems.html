@@ -1,0 +1,47 @@
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<br>
+<br>
+<input type="text" id="itemTitle" placeholder="Item Title" width="400px"/>
+<br>
+<br>
+<input type="text" id="itemImage" placeholder="Image URL" />
+<br>
+<br>
+<input type="text" id="itemText" placeholder="Text" />
+<br>
+<br>
+<input type="text" id="itemLink" placeholder="URL" />
+<br>
+<br>
+<input type="text" id="itemCategory" placeholder="Category" />
+<br>
+<br>
+<input type="text" id="itemType" placeholder="Type" />
+<br>
+<br>
+<input type="text" id="keywords" placeholder="Keywords" />
+<br>
+<br>
+<input type="button" onclick="saveItem()" value="Save" />
+
+
+
+<script>
+	function saveItem() {
+
+		var saveUrl = "SaveIqueueItem?itemName="
+				+ encodeURIComponent(itemTitle.value) + "&itemLink="
+				+ encodeURIComponent(itemLink.value) + "&itemImage="
+				+ encodeURIComponent(itemImage.value) + "&itemType="
+				+ encodeURIComponent(itemType.value) + "&itemCategory="
+				+ encodeURIComponent(itemCategory.value) + "&keywords="
+				+ encodeURIComponent(keywords.value) + "&itemText="
+				+ encodeURIComponent(itemText.value);
+
+		$.post(saveUrl, {}, function(data, status) {
+
+			alert("Item saved.");
+		});
+	}
+</script>

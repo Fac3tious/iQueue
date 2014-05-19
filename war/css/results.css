@@ -1,0 +1,66 @@
+@-ms-viewport
+{
+	width: 380px;
+}
+
+@-webkit-viewport
+{
+	width: 380px;
+}
+
+@-o-viewport
+{
+	width: 380px;
+}
+
+@-moz-viewport
+{
+	width: 380px;
+}
+
+@viewport
+{
+	width: 380px;
+}
+
+.html
+{
+	background-color: #7F7F7F;
+}
+
+#page
+{
+	z-index: 1;
+	width: 263px;
+	min-height: 154px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: #FFFFFF;
+	padding: 5px 42px 411px 75px;
+}
+
+#u138
+{
+	z-index: 2;
+	width: 237px;
+	position: relative;
+}
+
+#u149
+{
+	z-index: 4;
+	width: 75px;
+	height: 42px;
+	margin-left: 188px;
+	margin-top: 31px;
+	position: relative;
+	background: transparent url("../images/search-button-u149-fr.jpg") no-repeat left top;
+	background-size: contain !important;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+
