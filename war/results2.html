@@ -154,7 +154,8 @@
 
 				<input type="text" id="searchField" class="tftextinput2" name="q" size="20"
 					maxlength="120" placeholder="Search iQueue"><input type="submit"
-					value=">" class="tfbutton2" onclick="showResultsList()">
+					id="searchButton" value=">" class="tfbutton2"
+					onclick="showResultsList()">
 
 				<div class="tfclear"></div>
 			</div>
@@ -329,6 +330,13 @@ table.tableizer-table {
 															+ e);
 										}
 									});
+					
+					
+					$("#searchField").keyup(function(event){
+					    if(event.keyCode == 13){
+					        $("#searchButton").click();
+					    }
+					});
 				</script>
 		</body>
 </html>
