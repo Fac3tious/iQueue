@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.datastore.Query.CompositeFilterOperator;
-import com.google.appengine.api.datastore.Query.FilterOperator;
-import com.google.appengine.api.datastore.Query.FilterPredicate;
 import com.google.appengine.labs.repackaged.org.json.JSONArray;
 import com.iqueue.utilities.CallbackUtilities;
 import com.iqueue.utilities.Operations;
@@ -51,11 +48,9 @@ public class ListSearchResultsServlet extends HttpServlet {
 
 		Query query = new Query("IqueueItems");
 
-		query.setFilter(CompositeFilterOperator.or(new FilterPredicate(
-				"keywords", FilterOperator.GREATER_THAN_OR_EQUAL, keywords),
-				new FilterPredicate("keywords",
-						FilterOperator.LESS_THAN_OR_EQUAL, keywords)));
-		return Operations.jsonQuery(query);
+		// query.setFilter(new FilterPredicate("keywords",
+		// FilterOperator.GREATER_THAN_OR_EQUAL, keywords));
+		return Operations.jsonQueryTextFilter(query, keywords);
 	}
 
 }
