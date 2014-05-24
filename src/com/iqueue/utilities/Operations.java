@@ -20,7 +20,7 @@ public class Operations {
 
 		DatastoreService datastore = DatastoreServiceFactory
 				.getDatastoreService();
-		
+
 		PreparedQuery pq = datastore.prepare(q);
 
 		for (Entity result : pq.asIterable()) {
@@ -44,5 +44,43 @@ public class Operations {
 			id = Long.toString(entity.getKey().getId());
 		}
 		return id;
+	}
+
+	public static JSONArray jsonQueryTextFilter(final Query q,
+			final String filter) {
+
+		JSONArray jsonArray = new JSONArray();
+
+		DatastoreService datastore = DatastoreServiceFactory
+				.getDatastoreService();
+
+		PreparedQuery pq = datastore.prepare(q);
+
+		for (Entity result : pq.asIterable()) {
+
+			String keywords = (String) result.getProperty("keywords");
+			
+			if (keywords.toLowerCase().contains(filter.toLowerCase())) {
+				jsonArray.put(ConvertEntityToJson.getJson(result, null));
+
+			} else {
+
+				String text = (String) result.getProperty("itemText");
+
+				if (text.toLowerCase().contains(filter.toLowerCase())) {
+					jsonArray.put(ConvertEntityToJson.getJson(result, null));
+
+				} else {
+
+					String title = (String) result.getProperty("itemName");
+					if (title.toLowerCase().contains(filter.toLowerCase())) {
+						jsonArray
+								.put(ConvertEntityToJson.getJson(result, null));
+					}
+				}
+			}
+		}
+
+		return jsonArray;
 	}
 }
