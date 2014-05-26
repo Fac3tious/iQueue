@@ -12,14 +12,14 @@ function showResultsList() {
 
 			$.each(results, function(key, val) {
 		
-				itemsList += "<table><tr><th colspan='4'>" + val.itemName
-						+ "</th>" + "<tr><th rowspan='3'><img src='" + val.itemImage
+				itemsList += "<div class='div_wrap'><table><tr><th colspan='4' class='td_title'>" + val.itemName
+						+ "</th>" + "<tr><th rowspan='3' class='thumbnail'><img src='" + val.itemImage
 						+ "' /></th>" + "<th colspan='2'>" + val.itemText + "</th>"
 						+ "</tr><tr><td>" + val.timestamp + "</td>"
 						+ "<td>Date</td></tr>"
-						+ "<tr><th colspan='2'><a href='" + val.itemLink
-						+ "' target='_blank'>" + val.itemLink + "</th>"
-						+ "</tr></table><br />";
+						+ "<tr><td colspan='2'><a href='" + val.itemLink
+						+ "' target='_blank' class='link'>" + val.itemLink + "</td>"
+						+ "</tr></table></div>";
 				
 			});
 			
