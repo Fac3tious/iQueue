@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Results</title>
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/listResults.js"></script>
+<script>
+$(function() {
+$( "#tabs" ).tabs();
+});
+</script>
+<script type="text/javascript">
+			window.onload = function() {
+				//Get submit button
+				var submitbutton = document.getElementById("tfq");
+				//Add listener to submit button
+				if (submitbutton.addEventListener) {
+					submitbutton.addEventListener("click", function() {
+						if (submitbutton.value == 'Search iQueue') {//Customize this text string to whatever you want
+							submitbutton.value = '';
+						}
+					});
+				}
+			}
+		</script>
+<style type="text/css">
+.tftextinput2 {
+	margin: 0 0 0 4px;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #666;
+	border: 1px solid #0076a3;
+	border-right: 0px;
+	border-top-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+}
+.tfbutton2 {
+	margin: 0;
+	margin-left:-4px;
+	padding: 5px 7px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: solid 1px #0076a3;
+	border-right: 0px;
+	background: #0095cd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top, #00adee, #0078a5);
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+}
+.tfbutton2:hover {
+	text-decoration: none;
+	background: #007ead;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+	background: -moz-linear-gradient(top, #0095cc, #00678e);
+}
+/* Fixes submit button height problem in Firefox */
+.tfbutton2::-moz-focus-inner {
+ border: 0;
+}
+table {
+	width: 100%;
+}
+table, th, td {
+	border-collapse: collapse;
+	border: 1px solid black;
+	text-align: left;
+}
+th, td {
+	padding: 5px;
+}
+.thumbnail, .thumbnail img {
+	width: 125px;
+}
+.td_title span {
+	font-weight: bold;
+	color: #06C
+}
+a.link {
+	color: #06F;
+	text-decoration: none
+}
+a.link:hover {
+	text-decoration: underline
+}
+table.tableizer-table {
+	border: 1px solid #CCC;
+ font-family: Arial, Helvetica, sans-serif font-size : 12px;
+}
+.tableizer-table td {
+	padding: 4px;
+	margin: 3px;
+	border: 1px solid #ccc;
+}
+.tableizer-table th {
+	background-color: #FFFFFF;
+	color: #FFF;
+	font-weight: bold;
+}
+.div_wrap {
+	display: block;
+	margin: 10px 0;
+}
+.logo {
+	background: url(img/iqueue-logov3.png) no-repeat 0 0;
+	width: 260px;
+	height: 90px;
+	display: block;
+}
+</style>
+</head>
+<body>
+<div id="page">
+  <div id="u237" class="logo"></div>
+  <div id="tfheader" align="left">
+    <input type="text" id="searchField" class="tftextinput2" name="q" size="20"
+					maxlength="120" placeholder="Search iQueue">
+    <input type="submit" value=">" class="tfbutton2" onClick="showResultsList()">
+    <div class="tfclear"></div>
+  </div>
+</div>
+<div id="tabs">
+  <ul>
+    <li><a id="tab-1" href="#tabs-content-1">All Results</a></li>
+    <li><a id="tab-2" href="#tabs-content-2">Articles</a></li>
+  </ul>
+  <div id="tabs-content-1">
+    <div id="resultsPanel" class="div_wrap"> 
+      <!--    	Search results--> 
+    </div>
+  </div>
+  <div id="tabs-content-2">
+    <div class="div_wrap">
+      <table>
+        <tr>
+          <th colspan="4">Title</th>
+        <tr>
+          <th rowspan="3" class="thumbnail">Thumbnail Image</th>
+          <td colspan="2">Description</td>
+        </tr>
+          </tr>
+        
+        <tr>
+          <td>Time</td>
+          <td>Date</td>
+        </tr>
+        <tr>
+          <td colspan="2">Url</td>
+        </tr>
+      </table>
+    </div>
+    <div class="div_wrap">
+      <table>
+        <tr>
+          <th colspan="4">Title</th>
+        <tr>
+          <th rowspan="3" class="thumbnail">Thumbnail Image</th>
+          <td colspan="2">Description</td>
+        </tr>
+          </tr>
+        
+        <tr>
+          <td>Time</td>
+          <td>Date</td>
+        </tr>
+        <tr>
+          <td colspan="2">Url</td>
+        </tr>
+      </table>
+    </div>
+    <div class="div_wrap">
+      <table>
+        <tr>
+          <th colspan="4">Title</th>
+        <tr>
+          <th rowspan="3" class="thumbnail">Thumbnail Image</th>
+          <td colspan="2">Description</td>
+        </tr>
+          </tr>
+        
+        <tr>
+          <td>Time</td>
+          <td>Date</td>
+        </tr>
+        <tr>
+          <td colspan="2">Url</td>
+        </tr>
+      </table>
+    </div>
+    <div class="div_wrap">
+      <table>
+        <tr>
+          <th colspan="4">Title</th>
+        <tr>
+          <th rowspan="3" class="thumbnail">Thumbnail Image</th>
+          <td colspan="2">Description</td>
+        </tr>
+          </tr>
+        
+        <tr>
+          <td>Time</td>
+          <td>Date</td>
+        </tr>
+        <tr>
+          <td colspan="2">Url</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- JS includes --> 
+<script src="js/museutils.js?3880880085" type="text/javascript"></script> 
+<script src="js/jquery.watch.js?4199601726"
+					type="text/javascript"></script> 
+<!-- Other scripts --> 
+<script type="text/javascript">
+					$(document)
+							.ready(
+									function() {
+										
+									});
+					
+					
+					$("#searchField").keyup(function(event){
+					    if(event.keyCode == 13){
+					        $("#searchButton").click();
+					    }
+					});
+				</script>
+</body>
+</html>
