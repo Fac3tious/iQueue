@@ -6,10 +6,19 @@
 <link rel="stylesheet" href="css/jquery-ui.css">
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/jquery-ui.js"></script>
+
+<script src="js/listResults.js" type="text/javascript"></script>
+
 <script>
-$(function() {
-$( "#tabs" ).tabs();
-});
+	$(function() {
+		$("#tabs").tabs();
+	});
+	
+	$("#searchField").keyup(function(event){
+	    if(event.keyCode == 13){
+	        $("#searchButton").click();
+	    }
+	});
 </script>
 
 <style type="text/css">
@@ -24,6 +33,7 @@ $( "#tabs" ).tabs();
 	border-top-left-radius: 5px 5px;
 	border-bottom-left-radius: 5px 5px;
 }
+
 .tfbutton2 {
 	margin: 0;
 	padding: 5px 7px;
@@ -38,210 +48,230 @@ $( "#tabs" ).tabs();
 	border: solid 1px #0076a3;
 	border-right: 0px;
 	background: #0095cd;
-	background: -webkit-gradient(linear, left top, left bottom, from(#00adee),  to(#0078a5));
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee),
+		to(#0078a5));
 	background: -moz-linear-gradient(top, #00adee, #0078a5);
 	border-top-right-radius: 5px 5px;
 	border-bottom-right-radius: 5px 5px;
 }
+
 .tfbutton2:hover {
 	text-decoration: none;
 	background: #007ead;
-	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc),  to(#00678e));
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc),
+		to(#00678e));
 	background: -moz-linear-gradient(top, #0095cc, #00678e);
 }
 /* Fixes submit button height problem in Firefox */
 .tfbutton2::-moz-focus-inner {
- border: 0;
-}
-table {
-	width:100%;
-}
-table, th, td {
-	border-collapse: collapse;
-	border: 1px solid black;
-	text-align:left;
-}
-th, td {
-	padding: 5px;
-}
-.thumbnail, .thumbnail img
-{
-	width:125px;
-}
-.td_title span
-{
-	font-weight:bold;
-	color:#06C
-}
-a.link
-{
-	color:#06F;
-	text-decoration:none
-}
-a.link:hover
-{
-	text-decoration:underline
+	border: 0;
 }
 
+table {
+	width: 100%;
+}
+
+table,th,td {
+	border-collapse: collapse;
+	border: 1px solid black;
+	text-align: left;
+}
+
+th,td {
+	padding: 5px;
+}
+
+.thumbnail,.thumbnail img {
+	width: 125px;
+}
+
+.td_title span {
+	font-weight: bold;
+	color: #06C
+}
+
+a.link {
+	color: #06F;
+	text-decoration: none
+}
+
+a.link:hover {
+	text-decoration: underline
+}
 
 table.tableizer-table {
 	border: 1px solid #CCC;
- font-family: Arial, Helvetica, sans-serif font-size : 12px;
+	font-family: Arial, Helvetica, sans-serif font-size : 12px;
 }
+
 .tableizer-table td {
 	padding: 4px;
 	margin: 3px;
 	border: 1px solid #ccc;
 }
+
 .tableizer-table th {
 	background-color: #FFFFFF;
 	color: #FFF;
 	font-weight: bold;
 }
+
 .div_wrap {
-	display:block;
-	margin:10px 0;
+	display: block;
+	margin: 10px 0;
 }
 
-.logo
-{
-	background:url(img/iqueue-logov3.png) no-repeat  0 0;
-	width:260px;
-	height:90px;
-	display:block;
+.logo {
+	background: url(img/iqueue-logov3.png) no-repeat 0 0;
+	width: 260px;
+	height: 90px;
+	display: block;
 }
 </style>
 </head>
 <body>
-<div class="logo"></div>
-<div id="tfheader" align="left">
-  <input type="text" id="searchField" class="tftextinput2" name="q" size="20"
-					maxlength="120" placeholder="Search iQueue"><input type="submit" value=">" class="tfbutton2" onClick="showResultsList()">
-  <div class="tfclear"></div>
-</div>
-<div id="tabs">
-  <ul>
-    <li><a id="tab-1" href="#tabs-content-1">All Results</a></li>
-    <li><a id="tab-2" href="#tabs-content-2">Articles</a></li>
-  </ul>
-  <div id="tabs-content-1">
-   <div class="div_wrap">
-      <table>
-        <tr>
-          <th colspan="4" class="td_title"><span>Podcast :</span> Episode 09X: One Way Ticket to Mars</th>
-        <tr>
-          <th rowspan="3" class="thumbnail">Thumbnail Image</th>
-          <td colspan="2">NASA is figuring out how to take the next great leap into space. The difficulty is, if we leap to Mars, we might not make it back.</td>
-        </tr>
-        </tr>
-        
-        <tr>
-          <td>Time</td>
-          <td>Date</td>
-        </tr>
-        <tr>
-          <td colspan="2"><a href="http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/" class="link" target="_blank">http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/</a></td>
-        </tr>
-      </table>
-    </div>
-  <div class="div_wrap">
-      <table>
-        <tr>
-          <th colspan="4" class="td_title"><span>Podcast :</span> Episode 09X: One Way Ticket to Mars</th>
-        <tr>
-          <th rowspan="3" class="thumbnail">Thumbnail Image</th>
-          <td colspan="2">NASA is figuring out how to take the next great leap into space. The difficulty is, if we leap to Mars, we might not make it back.</td>
-        </tr>
-        </tr>
-        
-        <tr>
-          <td>Time</td>
-          <td>Date</td>
-        </tr>
-        <tr>
-          <td colspan="2"><a href="http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/" class="link" target="_blank">http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/</a></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <div id="tabs-content-2">
-    <div class="div_wrap">
-      <table>
-        <tr>
-          <th colspan="4">Title</th>
-        <tr>
-         <th rowspan="3" class="thumbnail">Thumbnail Image</th>
-          <td colspan="2">Description</td>
-        </tr>
-        </tr>
-        
-        <tr>
-          <td>Time</td>
-          <td>Date</td>
-        </tr>
-        <tr>
-          <td colspan="2">Url</td>
-        </tr>
-      </table>
-    </div>
-    <div class="div_wrap">
-      <table>
-        <tr>
-          <th colspan="4">Title</th>
-        <tr>
-         <th rowspan="3" class="thumbnail">Thumbnail Image</th>
-          <td colspan="2">Description</td>
-        </tr>
-        </tr>
-        
-        <tr>
-          <td>Time</td>
-          <td>Date</td>
-        </tr>
-        <tr>
-          <td colspan="2">Url</td>
-        </tr>
-      </table>
-    </div>
-    <div class="div_wrap">
-      <table>
-        <tr>
-          <th colspan="4">Title</th>
-        <tr>
-         <th rowspan="3" class="thumbnail">Thumbnail Image</th>
-          <td colspan="2">Description</td>
-        </tr>
-        </tr>
-        
-        <tr>
-          <td>Time</td>
-          <td>Date</td>
-        </tr>
-        <tr>
-          <td colspan="2">Url</td>
-        </tr>
-      </table>
-    </div>
-    <div class="div_wrap">
-      <table>
-        <tr>
-          <th colspan="4">Title</th>
-        <tr>
-         <th rowspan="3" class="thumbnail">Thumbnail Image</th>
-          <td colspan="2">Description</td>
-        </tr>
-        </tr>
-        
-        <tr>
-          <td>Time</td>
-          <td>Date</td>
-        </tr>
-        <tr>
-          <td colspan="2">Url</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
+	<div class="logo"></div>
+	<div id="tfheader" align="left">
+		<input type="text" id="searchField" class="tftextinput2" name="q"
+			size="20" maxlength="120" placeholder="Search iQueue"><input
+			type="submit" value=">" class="tfbutton2" onClick="showResultsList()">
+		<div class="tfclear"></div>
+	</div>
+	<div id="tabs">
+		<ul>
+			<li><a id="tab-1" href="#tabs-content-1">All Results</a></li>
+			<li><a id="tab-2" href="#tabs-content-2">Articles</a></li>
+			<li><a id="tab-3" href="#tabs-content-3">Videos</a></li>
+			<li><a id="tab-4" href="#tabs-content-4">Audios</a></li>
+		</ul>
+		<div id="tabs-content-1">
+			<div class="div_wrap">
+				<table>
+					<tr>
+						<th colspan="4" class="td_title"><span>Podcast :</span>
+							Episode 09X: One Way Ticket to Mars</th>
+					<tr>
+						<th rowspan="3" class="thumbnail">Thumbnail Image</th>
+						<td colspan="2">NASA is figuring out how to take the next
+							great leap into space. The difficulty is, if we leap to Mars, we
+							might not make it back.</td>
+					</tr>
+					</tr>
+
+					<tr>
+						<td>Time</td>
+						<td>Date</td>
+					</tr>
+					<tr>
+						<td colspan="2"><a
+							href="http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/"
+							class="link" target="_blank">http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/</a></td>
+					</tr>
+				</table>
+			</div>
+			<div class="div_wrap">
+				<table>
+					<tr>
+						<th colspan="4" class="td_title"><span>Podcast :</span>
+							Episode 09X: One Way Ticket to Mars</th>
+					<tr>
+						<th rowspan="3" class="thumbnail">Thumbnail Image</th>
+						<td colspan="2">NASA is figuring out how to take the next
+							great leap into space. The difficulty is, if we leap to Mars, we
+							might not make it back.</td>
+					</tr>
+					</tr>
+
+					<tr>
+						<td>Time</td>
+						<td>Date</td>
+					</tr>
+					<tr>
+						<td colspan="2"><a
+							href="http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/"
+							class="link" target="_blank">http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="tabs-content-2">
+			<div class="div_wrap">
+				<table>
+					<tr>
+						<th colspan="4" class="td_title"><span>Podcast :</span>
+							Episode 09X: One Way Ticket to Mars</th>
+					<tr>
+						<th rowspan="3" class="thumbnail">Thumbnail Image</th>
+						<td colspan="2">NASA is figuring out how to take the next
+							great leap into space. The difficulty is, if we leap to Mars, we
+							might not make it back.</td>
+					</tr>
+					</tr>
+
+					<tr>
+						<td>Time</td>
+						<td>Date</td>
+					</tr>
+					<tr>
+						<td colspan="2"><a
+							href="http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/"
+							class="link" target="_blank">http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="tabs-content-3">
+			<div class="div_wrap">
+				<table>
+					<tr>
+						<th colspan="4" class="td_title"><span>Podcast :</span>
+							Episode 09X: One Way Ticket to Mars</th>
+					<tr>
+						<th rowspan="3" class="thumbnail">Thumbnail Image</th>
+						<td colspan="2">NASA is figuring out how to take the next
+							great leap into space. The difficulty is, if we leap to Mars, we
+							might not make it back.</td>
+					</tr>
+					</tr>
+
+					<tr>
+						<td>Time</td>
+						<td>Date</td>
+					</tr>
+					<tr>
+						<td colspan="2"><a
+							href="http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/"
+							class="link" target="_blank">http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="tabs-content-4">
+			<div class="div_wrap">
+				<table>
+					<tr>
+						<th colspan="4" class="td_title"><span>Podcast :</span>
+							Episode 09X: One Way Ticket to Mars</th>
+					<tr>
+						<th rowspan="3" class="thumbnail">Thumbnail Image</th>
+						<td colspan="2">NASA is figuring out how to take the next
+							great leap into space. The difficulty is, if we leap to Mars, we
+							might not make it back.</td>
+					</tr>
+					</tr>
+
+					<tr>
+						<td>Time</td>
+						<td>Date</td>
+					</tr>
+					<tr>
+						<td colspan="2"><a
+							href="http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/"
+							class="link" target="_blank">http://99percentinvisible.org/episode/9x-one-way-ticket-to-mars/</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
